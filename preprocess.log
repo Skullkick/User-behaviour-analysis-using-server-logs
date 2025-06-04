@@ -1,0 +1,19 @@
+2025-05-27 19:50:09,057 - Loaded 350683 rows from D:\MAJOR PROJECT\User behaviour analysis using server logs\data\raw_logs\eclog_1day.csv
+2025-05-27 19:50:09,310 - Sample timestamps:
+0   2019-12-10 23:00:00+00:00
+1   2019-12-10 23:00:01+00:00
+2   2019-12-10 23:00:01+00:00
+3   2019-12-10 23:00:05+00:00
+4   2019-12-10 23:00:05+00:00
+Name: TimeStamp, dtype: datetime64[ns, UTC]
+2025-05-27 19:50:09,969 - Rows flagged as bots: 22269
+2025-05-27 19:50:09,971 - Sample bot UserAgents:
+2     Mozilla/5.0 (compatible; SemrushBot/6~bl; +htt...
+8     Mozilla/5.0 (compatible; SemrushBot/6~bl; +htt...
+12    Mozilla/5.0 (compatible; SemrushBot/6~bl; +htt...
+16    Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Bu...
+19    Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http:...
+Name: User_Agent, dtype: object
+2025-05-27 19:50:10,006 - Rows after bot filtering: 328414
+2025-05-27 19:50:10,119 - Rows after filtering Response == 200: 321097
+2025-05-27 19:50:15,195 - Saved cleaned data to D:\Major Project\User behaviour analysis using server logs\data\processed_logs\processed_data.csv

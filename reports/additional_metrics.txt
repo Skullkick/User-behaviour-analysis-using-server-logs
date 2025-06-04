@@ -1,0 +1,11 @@
+
+Average session duration: 4.85 minutes
+Session duration stats:
+count    7785.000000
+mean        4.853235
+std        37.371016
+min         0.000000
+25%         0.000000
+50%         0.000000
+75%         0.116667
+max      1053.900000

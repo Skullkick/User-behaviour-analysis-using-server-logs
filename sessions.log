@@ -1,0 +1,61 @@
+2025-05-27 20:49:41,862 - Loaded 321097 rows from D:\Major Project\User behaviour analysis using server logs\data\processed_logs\processed_data.csv
+2025-05-27 20:49:42,019 - Sorted data by IP and TimeStamp
+2025-05-27 20:49:42,235 - Rows after filtering non-user actions: 94450
+2025-05-27 20:49:42,256 - Time difference stats (minutes):
+count    92335.000000
+mean         1.187008
+std         19.015742
+min          0.000000
+25%          0.000000
+50%          0.083333
+75%          1.083333
+max       1333.316667
+Name: time_diff, dtype: float64
+2025-05-27 20:49:42,484 - Unique referrer domains: 58
+2025-05-27 20:49:42,494 - Top 5 referrer domains:
+referrer_domain
+shop.our-internet-company.pl    90433
+                                 1662
+www.google.com                   1480
+www.google.pl                     299
+tpc.googlesyndication.com         147
+Name: count, dtype: int64
+2025-05-27 20:49:43,357 - Total domain changes: 7492
+2025-05-27 20:49:43,361 - Total new sessions marked: 7785
+2025-05-27 20:49:43,432 - Sample session assignment for IP 1000US:
+  Session_ID                 TimeStamp  time_diff  new_session  session_num      Page_URL Referrer_URL referrer_domain
+0   1000US_1 2019-12-11 09:07:42+00:00        NaN         True            1  /p-2100.html            -                
+2025-05-27 20:49:43,469 - Event distribution:
+Event
+Info_Page_View    53702
+Other_Action      35061
+Product_View       4015
+Add_to_Cart        1672
+Name: count, dtype: int64
+2025-05-27 20:49:43,487 - Total sessions: 7785
+2025-05-27 20:49:43,487 - Total unique IPs: 2115
+2025-05-27 20:49:43,488 - Average events per session: 12.13
+2025-05-27 20:49:43,494 - Duplicate Session_IDs: 86665
+2025-05-27 20:49:43,567 - Found 86665 duplicate Session_IDs. Sample duplicates:
+   Session_ID      IP  ...                                       Referrer_URL               referrer_domain
+2    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+3    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+4    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+5    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+6    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+7    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+8    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+9    1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+10   1001PL_2  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+11   1001PL_3  1001PL  ...  https://shop.our-internet-company.pl/p-4267.ht...  shop.our-internet-company.pl
+
+[10 rows x 6 columns]
+2025-05-27 20:49:43,591 - Sessions per IP (top 5):
+IP
+950PL    190
+599PL    170
+12US      92
+571PL     50
+304PL     41
+Name: Session_ID, dtype: int64
+2025-05-27 20:49:44,840 - Saved event log to D:\Major Project\User behaviour analysis using server logs\data\processed_logs\event_logs.csv

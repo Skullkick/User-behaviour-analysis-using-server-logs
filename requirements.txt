@@ -1,0 +1,11 @@
+pandas
+ipykernel
+matplotlib
+# seaborn
+tk
+pillow
+# pandas
+plotly
+kaleido
+seaborn
+# matplotlib
