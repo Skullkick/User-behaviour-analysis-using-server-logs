@@ -1,0 +1,11 @@
+Top Propositions by Event Type:
+
+Cart Actions:
+- Added to Cart: 1672 occurrences
+
+Other:
+- Other Action: 35061 occurrences
+
+View Actions:
+- Info Page Viewed: 53702 occurrences
+- Product Page Viewed: 4015 occurrences

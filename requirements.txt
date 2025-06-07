@@ -9,3 +9,4 @@ plotly
 kaleido
 seaborn
 # matplotlib
+reportlab

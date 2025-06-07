@@ -1,18 +1,45 @@
 import pandas as pd
+import os
 
-# Load event logs
-df = pd.read_csv('E:\\Major Project\\User behaviour analysis using server logs\\data\\processed_logs\\event_logs.csv')
+def analyze_add_to_cart_distribution(event_log_path, report_dir):
+    """
+    Analyze Add_to_Cart event distribution per session.
 
-# Count Add_to_Cart events per session
-cart_events = df[df['Event'] == 'Add_to_Cart'].groupby('Session_ID').size()
-print("Add_to_Cart Events per Session Stats:")
-print(cart_events.describe())
-print("\nTop 5 Sessions by Add_to_Cart Events:")
-print(cart_events.sort_values(ascending=False).head(5))
+    Parameters:
+    - event_log_path: Path to the event logs CSV file.
+    - report_dir: Directory to save the analysis report.
 
-# Save results
-with open(r'E:\Major Project\User behaviour analysis using server logs\reports\add_to_cart_distribution.txt', 'a') as f:
-    f.write("\nAdd_to_Cart Events per Session Stats:\n")
-    f.write(cart_events.describe().to_string())
-    f.write("\nTop 5 Sessions by Add_to_Cart Events:\n")
-    f.write(cart_events.sort_values(ascending=False).head(5).to_string())
+    Returns:
+    - results: dict with textual summary and report file path.
+    """
+    df = pd.read_csv(event_log_path)
+
+    # Count Add_to_Cart events per session
+    cart_events = df[df['Event'] == 'Add_to_Cart'].groupby('Session_ID').size()
+
+    # Summary statistics as string
+    stats_str = cart_events.describe().to_string()
+    top5_str = cart_events.sort_values(ascending=False).head(5).to_string()
+
+    summary = (
+        "Add_to_Cart Events per Session Stats:\n"
+        f"{stats_str}\n\n"
+        "Top 5 Sessions by Add_to_Cart Events:\n"
+        f"{top5_str}"
+    )
+
+    # Ensure report directory exists
+    os.makedirs(report_dir, exist_ok=True)
+    report_path = os.path.join(report_dir, "add_to_cart_distribution.txt")
+
+    # Save the report (append mode)
+    with open(report_path, 'a') as f:
+        f.write("\n" + summary + "\n")
+
+    # Return the results dictionary
+    return {
+        "textual_data": {
+            "Add_to_Cart Distribution": summary
+        },
+        "report_path": report_path
+    }

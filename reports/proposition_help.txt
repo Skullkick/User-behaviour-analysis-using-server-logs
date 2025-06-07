@@ -1,0 +1,9 @@
+
+        Proposition Help:
+        Propositions are mapped to events in Linear Temporal Logic (LTL) format for user behavior analysis.
+        - 'v^1 & info' (Info Page Viewed): User viewed an informational page (e.g., /inne/) at level 1.
+        - 'v^1 & product' (Product Page Viewed): User viewed a product page (e.g., /p-12345/) at level 1.
+        - 'add_to_cart' (Added to Cart): User added an item to their cart.
+        - 'search' (Search Performed): User performed a search (refined event).
+        - 'v^1 & category' (Category Page Viewed): User viewed a category page at level 1.
+        

@@ -1,0 +1,69 @@
+
+    \documentclass{article}
+    \usepackage{graphicx}
+    \usepackage{geometry}
+    \usepackage{booktabs}
+    \usepackage{parskip}
+    \geometry{a4paper, margin=1in}
+    
+    \begin{document}
+    \title{User Behavior Analysis Report}
+    \author{}
+    \date{\today}
+    \maketitle
+    
+    \section{Introduction}
+    This report presents the analysis of user behavior based on server logs from an e-commerce website, including event distributions, session statistics, and conversion funnel insights.
+    
+    \section{Visualizations}
+    
+    \subsection{Event Mapping Table}
+    \includegraphics[width=\textwidth]{E:/Major Project/User behaviour analysis using server logs/reports/event_mapping_table.png}
+    
+    \subsection{Proposition Summary}
+    \includegraphics[width=\textwidth]{E:/Major Project/User behaviour analysis using server logs/reports/proposition_summary.png}
+    
+    \subsection{Event Distribution}
+    \includegraphics[width=\textwidth]{E:/Major Project/User behaviour analysis using server logs/reports/event_distribution.png}
+    
+    \section{Textual Data}
+    
+    \subsection{Event Distribution}
+    \begin{verbatim}
+    ### Event Distribution (in %)
+- Info_Page_View: 56.86%
+- Other_Action: 37.12%
+- Product_View: 4.25%
+- Add_to_Cart: 1.77%
+
+    \end{verbatim}
+    
+    \subsection{Targeted Analysis}
+    \begin{verbatim}
+    Percentage of sessions with Add_to_Cart: 3.43%
+Sessions with Add_to_Cart: 267 out of 7785
+Top 5 Event Transitions:
+         Event     next_event  count
+Info_Page_View Info_Page_View  45518
+  Other_Action   Other_Action  23656
+  Other_Action Info_Page_View   7259
+Info_Page_View   Other_Action   4507
+  Product_View   Other_Action   1608
+    \end{verbatim}
+    
+    \subsection{Additional Metrics}
+    \begin{verbatim}
+    Average session duration: 4.85 minutes
+Session duration stats:
+count    7785.000000
+mean        4.853235
+std        37.371016
+min         0.000000
+25%         0.000000
+50%         0.000000
+75%         0.116667
+max      1053.900000
+    \end{verbatim}
+    
+    \end{document}
+    
