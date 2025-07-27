@@ -1,4 +1,3 @@
-# ltl_conversion_analysis.py
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
@@ -36,13 +35,17 @@ def analyze_ltl_conversion(file_path, report_dir):
     violation_count = len(conversion_violations)
     total_product_sessions = len(sessions_with_product_view)
 
-    # Visualization
-    plt.figure(figsize=(6, 4))
-    plt.bar(['Sessions with Violations', 'Sessions without Violations'],
-            [violation_count, total_product_sessions - violation_count], color=['red', 'green'])
-    plt.title('Sessions Violating G (Product_View → F Add_to_Cart)')
-    plt.ylabel('Number of Sessions')
-
+    # Visualization with data labels inside bars
+    fig, ax = plt.subplots(figsize=(6, 4))
+    bars = ax.bar(['Sessions with Violations', 'Sessions without Violations'],
+                  [violation_count, total_product_sessions - violation_count], color=['red', 'green'])
+    ax.set_title('Sessions Violating G (Product_View → F Add_to_Cart)')
+    ax.set_ylabel('Number of Sessions')
+    
+    # Add data labels inside the bars
+    ax.bar_label(bars, labels=[f'{violation_count}', f'{total_product_sessions - violation_count}'], 
+                 label_type='center', fontsize=10, color='black', weight='bold')
+    
     img_path = os.path.join(report_dir, "conversion_violation_distribution.png")
     plt.savefig(img_path)
     plt.close()

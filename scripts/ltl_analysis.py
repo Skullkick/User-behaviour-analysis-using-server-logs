@@ -30,14 +30,19 @@ def analyze_ltl_violations(input_file, report_dir, session_to_inspect="3560PL_6"
         if any(check_consecutive_adds(seq))
     }
 
-    # Plot
+    # Plot with data labels inside bars
     violation_count = len(all_violations)
-    plt.figure(figsize=(6, 4))
-    plt.bar(['Sessions with Violations', 'Sessions without Violations'],
-            [violation_count, len(event_sequences) - violation_count],
-            color=['red', 'green'])
-    plt.title('Sessions with Consecutive Add_to_Cart Violations')
-    plt.ylabel('Number of Sessions')
+    fig, ax = plt.subplots(figsize=(6, 4))
+    bars = ax.bar(['Sessions with Violations', 'Sessions without Violations'],
+                  [violation_count, len(event_sequences) - violation_count],
+                  color=['red', 'green'])
+    ax.set_title('Sessions with Consecutive Add_to_Cart Violations')
+    ax.set_ylabel('Number of Sessions')
+    
+    # Add data labels inside the bars
+    ax.bar_label(bars, labels=[f'{violation_count}', f'{len(event_sequences) - violation_count}'], 
+                 label_type='center', fontsize=10, color='black', weight='bold')
+    
     vis_path = os.path.join(report_dir, 'violation_distribution.png')
     plt.savefig(vis_path)
     plt.close()
